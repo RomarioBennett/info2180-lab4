@@ -4,32 +4,14 @@ window.onload = function() {
     // Get body element and store in a variable
     var body = document.getElementsByTagName("body");
     console.log(body);
-
+  //Layout the Board
     var board1 = document.getElementById("board").querySelectorAll("div");
     board1.forEach(i=>{i.className="square";});
     
     
-//var i;
-//var board2 = document.getElementsByClassName("square");
-
-
-//for (i = 0;i<board2.length;i++){
-
-  //board2[i].addEventListener("click",myFunction);
-
-//}
-
-//function myFunction(){
-
-  
-  //console.log("a click");
-  //board2[0].innerHTML = "X";
-//}
-   
+//Add an X or O to a square when clicked 
 var board2 = document.getElementById("board").querySelectorAll("div");
 var i;
-
-
 
 
 let letterChange = false;
@@ -58,15 +40,29 @@ board3.onclick = function() {
   
 }
 
-
+  
 
 
 }
+var i;
+var board4 = document.getElementById("board").querySelectorAll("div");
+for (i = 0;i<board4.length;i++){
+  var board5 = board4[i];
 
+board5.addEventListener("mouseover", func);
+board5.addEventListener("mouseout", func1);
+}
+function func()
+{  // not needed since item is already global, 
+   // I am assuming this is here just because it's sample code?
+   // var item = document.getElementById("button"); 
+   this.classList.add('hover');
+}
 
-
-
-
+function func1()
+{  
+   this.classList.remove('hover');
+}
 
 
       
