@@ -17,26 +17,36 @@ var i;
 let letterChange = false;
 for (i = 0;i<board2.length;i++){
   var board3 = board2[i];
-  
-board3.onclick = function() {
-  
+  var arrx = [];
+  var arro=[];
+
+  board3.onclick = function() {
+
   if (!letterChange && board3){
   var i;
   this.classList.add("X");
   this.innerHTML = "X";
   console.log("a click");
-
+  arrx.push(this.innerHTML);  
+  console.log(arrx)
   letterChange = true;
   } 
   else
   {
-  var i;
+var i;
   this.classList.add("O");
   this.innerHTML = "O";
   console.log("a click");
-    
+  arro.push(this.innerHTML); 
+  console.log(arro)  
   letterChange = false;
   }
+
+ if (arrx.length>=arro.length){
+
+  
+
+ }
   
 }
 
@@ -44,6 +54,8 @@ board3.onclick = function() {
 
 
 }
+
+//Color change when square is highlighted
 var i;
 var board4 = document.getElementById("board").querySelectorAll("div");
 for (i = 0;i<board4.length;i++){
@@ -53,9 +65,7 @@ board5.addEventListener("mouseover", func);
 board5.addEventListener("mouseout", func1);
 }
 function func()
-{  // not needed since item is already global, 
-   // I am assuming this is here just because it's sample code?
-   // var item = document.getElementById("button"); 
+{  
    this.classList.add('hover');
 }
 
